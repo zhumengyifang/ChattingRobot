@@ -1,2 +1,2 @@
 # ChattingRobot
-聊天机器人
+尬聊机器人
