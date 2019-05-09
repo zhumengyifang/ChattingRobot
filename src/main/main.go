@@ -8,14 +8,11 @@ import (
 
 const userId1 = "userId1"
 const userId2 = "userId2"
-
 func main() {
 	var chattingInfo = Util.BuildChatting("你好！", userId1)
-
 	var userId = userId1
 	for i := 0; i < 10; i++ {
 		var json = Util.ConvertJson(chattingInfo)
-
 		var resultText = chatting(userId, json)
 		time.Sleep(time.Second)
 
@@ -25,7 +22,7 @@ func main() {
 			userId = userId2
 		}
 
-		chattingInfo = Util.UpdateChatting(userId, resultText, chattingInfo)
+		 Util.UpdateChatting(userId, resultText, &chattingInfo)
 	}
 
 }

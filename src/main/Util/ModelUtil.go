@@ -6,10 +6,9 @@ import (
 
 const appKey = "6f884bbd0b9841bf846f13947a85b13c"
 
-func UpdateChatting(userId string, text string, chattingInfo model.Chatting) model.Chatting {
+func UpdateChatting(userId string, text string, chattingInfo *model.Chatting) {
 	chattingInfo.UserInfo.UserId = userId
 	chattingInfo.Perception.InputText.Text = text
-	return chattingInfo
 }
 
 func BuildChatting(text string, userId string) model.Chatting {
