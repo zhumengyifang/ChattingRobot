@@ -9,10 +9,10 @@ import (
 const userId1 = "userId1"
 const userId2 = "userId2"
 
-func Chatting()  {
+func Chatting(count int)  {
 	var chattingInfo = Util.BuildChatting("你好！", userId1)
 	var userId = userId1
-	for i := 0; i < 10; i++ {
+	for i := 0; i < count; i++ {
 		var json = Util.ConvertJson(*chattingInfo)
 		var resultText = chatting(userId, json)
 		time.Sleep(time.Second)
