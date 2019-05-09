@@ -2,25 +2,23 @@ package Util
 
 import (
 	"encoding/json"
-	"errors"
-	"fmt"
 	"github.com/gogf/gf/g/encoding/gjson"
 	"main/model"
 )
 
-func GetText(data string) (string, error) {
+func GetText(data string) string {
 	if j, err := gjson.DecodeToJson([]byte(data)); err != nil {
-		return "", errors.New("Get Text Error")
+		panic("Get Text Error")
 	} else {
 		var result = j.GetString("results.0.values.text")
-		return result, nil
+		return result
 	}
 }
 
 func ConvertJson(chattingInfo model.Chatting) string {
 	jsons, errs := json.Marshal(chattingInfo)
 	if errs != nil {
-		fmt.Print(errs.Error())
+		panic(errs.Error())
 	}
 	return string(jsons)
 }

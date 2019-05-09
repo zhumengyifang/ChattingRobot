@@ -11,23 +11,23 @@ func UpdateChatting(userId string, text string, chattingInfo *model.Chatting) {
 	chattingInfo.Perception.InputText.Text = text
 }
 
-func BuildChatting(text string, userId string) model.Chatting {
+func BuildChatting(text string, userId string) *model.Chatting {
 	chatting := model.Chatting{ReqType: 0}
 	chatting.Perception = buildPerception(text)
 	chatting.UserInfo = buildUserInfo(userId)
-	return chatting
+	return &chatting
 }
 
-func buildPerception(text string) model.Perception {
-	perception := model.Perception{buildInputText(text)}
-	return perception
+func buildPerception(text string) *model.Perception {
+	perception := model.Perception{InputText: buildInputText(text)}
+	return &perception
 }
 
-func buildInputText(text string) model.InputText {
-	inputText := model.InputText{text}
-	return inputText
+func buildInputText(text string) *model.InputText {
+	inputText := model.InputText{Text: text}
+	return &inputText
 }
 
-func buildUserInfo(userId string) model.UserInfo {
-	return model.UserInfo{appKey, userId}
+func buildUserInfo(userId string) *model.UserInfo {
+	return &model.UserInfo{ApiKey: appKey, UserId: userId}
 }

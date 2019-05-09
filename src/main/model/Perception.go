@@ -1,5 +1,5 @@
 package model
 
 type Perception struct {
-	InputText InputText `json:"inputText"`
+	InputText *InputText `json:"inputText"`
 }
