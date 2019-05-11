@@ -1,9 +1,9 @@
 package Util
 
 import (
+	"chattingRobot/src/main/model"
 	"encoding/json"
 	"github.com/gogf/gf/g/encoding/gjson"
-	"main/model"
 )
 
 func GetText(data string) string {

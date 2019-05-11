@@ -1,7 +1,7 @@
 package Util
 
 import (
-	"main/model"
+	"chattingRobot/src/main/model"
 )
 
 const appKey = "6f884bbd0b9841bf846f13947a85b13c"

@@ -1,15 +1,15 @@
 package main
 
 import (
+	"chattingRobot/src/main/Util"
 	"fmt"
-	"main/Util"
 	"time"
 )
 
 const userId1 = "userId1"
 const userId2 = "userId2"
 
-func Chatting(count int)  {
+func Chatting(count int) {
 	var chattingInfo = Util.BuildChatting("你好！", userId1)
 	var userId = userId1
 	for i := 0; i < count; i++ {
@@ -29,7 +29,6 @@ func Chatting(count int)  {
 func chatting(userId string, json string) string {
 	var body = Util.HttpPost(json)
 	var resultText = Util.GetText(body)
-	fmt.Println()
 	fmt.Println(userId + ":" + resultText)
 	return resultText
 }
