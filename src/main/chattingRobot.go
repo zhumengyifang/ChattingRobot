@@ -2,25 +2,23 @@ package main
 
 import (
 	"chattingRobot/src/main/Util"
+	"chattingRobot/src/main/model"
 	"fmt"
 	"time"
 )
 
-const userId1 = "userId1"
-const userId2 = "userId2"
-
 func Chatting(count int) {
-	var chattingInfo = Util.BuildChatting("你好！", userId1)
-	var userId = userId1
+	var chattingInfo = Util.BuildChatting("你好！", model.UserId1)
+	var userId = model.UserId1
 	for i := 0; i < count; i++ {
 		var json = Util.ConvertJson(*chattingInfo)
 		var resultText = chatting(userId, json)
 		time.Sleep(time.Second)
 
 		if i%2 != 0 {
-			userId = userId1
+			userId = model.UserId1
 		} else {
-			userId = userId2
+			userId = model.UserId2
 		}
 		Util.UpdateChatting(userId, resultText, chattingInfo)
 	}

@@ -2,15 +2,14 @@ package Util
 
 import (
 	"bytes"
+	"chattingRobot/src/main/model"
 	"io/ioutil"
 	"net/http"
 )
 
-const url = "http://openapi.tuling123.com/openapi/api/v2"
-
 func HttpPost(json string) string {
 	jsonStr := []byte(json)
-	req, err := http.NewRequest("POST", url, bytes.NewBuffer(jsonStr))
+	req, err := http.NewRequest("POST", model.Url, bytes.NewBuffer(jsonStr))
 	if err!=nil{
 		panic(err.Error())
 	}
